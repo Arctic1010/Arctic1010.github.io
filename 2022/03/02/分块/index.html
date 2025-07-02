@@ -1,26 +1,25 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
 
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"arctic1010.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="分块 分块的基本思想大概就是“整块统计，散块暴力”。 如何分块？ 设块长，一般为 n\sqrt{n}n​，初始化每块的左右边界和每个元素对应的块以及对应的辅助数组。 不过最优块长可以通过放缩或者解方程求出。 对于每次区间修改和查询，分「在一块」和「不在一块」两种情况考虑。 LOJ 小分块入门⑨题  区间加，单点询问  维护 addaddadd 数组为整块的加标记。 修改：如果在一块直接按照散块暴力">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Arctic_1010">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="分块 分块的基本思想大概就是“整块统计，散块暴力”。 如何分块？ 设块长，一般为 n\sqrt{n}n​，初始化每块的左右边界和每个元素对应的块以及对应的辅助数组。 不过最优块长可以通过放缩或者解方程求出。 对于每次区间修改和查询，分「在一块」和「不在一块」两种情况考虑。 LOJ 小分块入门⑨题  区间加，单点询问  维护 addaddadd 数组为整块的加标记。 修改：如果在一块直接按照散块暴力">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分块">
 <meta property="og:url" content="http://arctic1010.github.io/2022/03/02/%E5%88%86%E5%9D%97/">
@@ -28,186 +27,295 @@
 <meta property="og:description" content="分块 分块的基本思想大概就是“整块统计，散块暴力”。 如何分块？ 设块长，一般为 n\sqrt{n}n​，初始化每块的左右边界和每个元素对应的块以及对应的辅助数组。 不过最优块长可以通过放缩或者解方程求出。 对于每次区间修改和查询，分「在一块」和「不在一块」两种情况考虑。 LOJ 小分块入门⑨题  区间加，单点询问  维护 addaddadd 数组为整块的加标记。 修改：如果在一块直接按照散块暴力">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-02T11:48:13.000Z">
-<meta property="article:modified_time" content="2023-09-24T03:07:27.913Z">
+<meta property="article:modified_time" content="2025-06-30T02:57:15.975Z">
 <meta property="article:author" content="Arctic_1010">
 <meta property="article:tag" content="OI archive">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>分块 - Arctic_1010&#39;s temporary blog</title>
 
-<link rel="canonical" href="http://arctic1010.github.io/2022/03/02/%E5%88%86%E5%9D%97/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
 
-  <title>分块 | Arctic_1010's temporary blog</title>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"arctic1010.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-7QPRQL6WWE"},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-7QPRQL6WWE", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-7QPRQL6WWE');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
+  
+<meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
 
-<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+<body>
+  
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+  <header>
+    
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Arctic_1010's temporary blog</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Arctic_1010&#39;s Blog</strong>
     </a>
-      <p class="site-subtitle" itemprop="description">Life is complex. It has both real and imaginary parts!</p>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="分块"></span>
+          
+        </div>
 
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-03-02 19:48" pubdate>
+          2022年3月2日 晚上
+        </time>
+      </span>
+    
+  </div>
 
-</div>
-    </header>
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k 字
+        
+      </span>
+    
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
   </div>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://arctic1010.github.io/2022/03/02/%E5%88%86%E5%9D%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Arctic_1010">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Arctic_1010's temporary blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          分块
-        </h1>
-
-        <div class="post-meta">
-
-	  
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-02 19:48:13" itemprop="dateCreated datePublished" datetime="2022-03-02T19:48:13+08:00">2022-03-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-09-24 11:07:27" itemprop="dateModified" datetime="2023-09-24T11:07:27+08:00">2023-09-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Old-thing/" itemprop="url" rel="index"><span itemprop="name">Old thing</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+        
+      </div>
 
       
-        <h1 id="分块">分块</h1>
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">分块</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="分块">分块</h1>
 <p>分块的基本思想大概就是“整块统计，散块暴力”。</p>
 <h2 id="如何分块？">如何分块？</h2>
 <p>设块长，一般为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.23972em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702
@@ -243,8 +351,8 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <p>依然对每块维护一个 <code>vector</code> 存储对应块内从小到大排序后的数组。</p>
 <p>修改：与 2 类似。</p>
 <p>查询：散块暴力扫并统计答案，整块直接在 <code>vector</code> 里二分查找（返回对应数）即可。注意找出的值要加上对应标记。</p>
-<p>细节：<code>lower_bound</code> 返回不小于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的第一个值所在的迭代器，所以迭代器要自减一次。另外，它在找不到的时候返回的是尾迭代器，但是这并不代表块内没有对答案的贡献，因为此时 <code>vector</code> 中的最后一个元素也可能是答案。当返回的是首迭代器时及时特判 <code>conitnue</code>。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=pos[l]+<span class="number">1</span>;i&lt;pos[r];i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">auto</span> it=<span class="built_in">lower_bound</span>(sorted[i].<span class="built_in">begin</span>(),sorted[i].<span class="built_in">end</span>(),val-add[i]);</span><br><span class="line">	<span class="keyword">if</span>(it==sorted[i].<span class="built_in">begin</span>()) <span class="keyword">continue</span>;</span><br><span class="line">	it--;</span><br><span class="line">	ans=<span class="built_in">max</span>(ans,(*it)+add[i]);</span><br><span class="line">	flag=<span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>细节：<code>lower_bound</code> 返回不小于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的第一个值所在的迭代器，所以迭代器要自减一次。另外，它在找不到的时候返回的是尾迭代器，但是这并不代表块内没有对答案的贡献，因为此时 <code>vector</code> 中的最后一个元素也可能是答案。当返回的是首迭代器时及时特判 <code>continue</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=pos[l]+<span class="hljs-number">1</span>;i&lt;pos[r];i++)<br>&#123;<br>	<span class="hljs-keyword">auto</span> it=<span class="hljs-built_in">lower_bound</span>(sorted[i].<span class="hljs-built_in">begin</span>(),sorted[i].<span class="hljs-built_in">end</span>(),val-add[i]);<br>	<span class="hljs-keyword">if</span>(it==sorted[i].<span class="hljs-built_in">begin</span>()) <span class="hljs-keyword">continue</span>;<br>	it--;<br>	ans=<span class="hljs-built_in">max</span>(ans,(*it)+add[i]);<br>	flag=<span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>upd：有一种东西叫反向首迭代器 <code>rbegin</code>，用这个可以更方便地判断。</p>
 <ol start="4">
 <li>区间加，区间求和</li>
@@ -299,9 +407,9 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <p>所以我们需要一个 <code>pushdown</code> 函数来实现对散块暴力的标记下传，来避免此类问题的出现。</p>
 <p>在散块原值有被更改的风险时应该及时下传并清空标记。</p>
 <p>（<code>pushdown</code> 函数的实现）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=L[x];i&lt;=R[x];i++)</span><br><span class="line">		(a[i]=a[i]%MOD*mul[x]%MOD+add[x]%MOD)%=MOD;</span><br><span class="line">	mul[x]=<span class="number">1</span>,add[x]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">pushdown</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=L[x];i&lt;=R[x];i++)<br>		(a[i]=a[i]%MOD*mul[x]%MOD+add[x]%MOD)%=MOD;<br>	mul[x]=<span class="hljs-number">1</span>,add[x]=<span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>（以修改 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>d</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">add</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mord mathdefault">d</span></span></span></span> 标记为例）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">modify_add</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	val%=MOD;</span><br><span class="line">	<span class="keyword">if</span>(pos[l]==pos[r])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">pushdown</span>(pos[l]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=r;i++) (a[i]+=val)%=MOD;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">pushdown</span>(pos[l]),<span class="built_in">pushdown</span>(pos[r]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=pos[l]+<span class="number">1</span>;i&lt;pos[r];i++) (add[i]+=val)%=MOD;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=R[pos[l]];i++) (a[i]+=val)%=MOD;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=L[pos[r]];i&lt;=r;i++) (a[i]+=val)%=MOD;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">modify_add</span><span class="hljs-params">(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r,<span class="hljs-type">int</span> val)</span></span><br><span class="hljs-function"></span>&#123;<br>	val%=MOD;<br>	<span class="hljs-keyword">if</span>(pos[l]==pos[r])<br>	&#123;<br>		<span class="hljs-built_in">pushdown</span>(pos[l]);<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=r;i++) (a[i]+=val)%=MOD;<br>	&#125;<br>	<span class="hljs-keyword">else</span><br>	&#123;<br>		<span class="hljs-built_in">pushdown</span>(pos[l]),<span class="hljs-built_in">pushdown</span>(pos[r]);<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=pos[l]+<span class="hljs-number">1</span>;i&lt;pos[r];i++) (add[i]+=val)%=MOD;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=R[pos[l]];i++) (a[i]+=val)%=MOD;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=L[pos[r]];i&lt;=r;i++) (a[i]+=val)%=MOD;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ol start="8">
 <li>区间询问等于一个数的元素个数+区间推平（数据随机）</li>
 </ol>
@@ -344,207 +452,449 @@ c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
 M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。</p>
 <p>注意：使用 <code>unordered_map</code> 会被卡常。<s>你有离散化了为什么还要用这个？</s></p>
 <p><s>被卡常的</s>预处理：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=block_cnt;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) Sum[i][b[j]]=Sum[i<span class="number">-1</span>][b[j]];</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=L[i];j&lt;=R[i];j++) Sum[i][b[j]]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=block_cnt;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt;m;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=L[i];j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			m[b[j]]++;</span><br><span class="line">			<span class="keyword">if</span>(pos[j]!=pos[j+<span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">auto</span> k:m)</span><br><span class="line">					<span class="keyword">if</span>(Cnt[i][pos[j]]&lt;k.second)</span><br><span class="line">						Num[i][pos[j]]=k.first,Cnt[i][pos[j]]=k.second;</span><br><span class="line">					<span class="keyword">else</span> <span class="keyword">if</span>(Cnt[i][pos[j]]==k.second &amp;&amp; Num[i][pos[j]]&gt;k.first)</span><br><span class="line">						Num[i][pos[j]]=k.first;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=block_cnt;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++) Sum[i][b[j]]=Sum[i<span class="hljs-number">-1</span>][b[j]];<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=L[i];j&lt;=R[i];j++) Sum[i][b[j]]++;<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=block_cnt;i++)<br>	&#123;<br>		unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;m;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=L[i];j&lt;=n;j++)<br>		&#123;<br>			m[b[j]]++;<br>			<span class="hljs-keyword">if</span>(pos[j]!=pos[j+<span class="hljs-number">1</span>])<br>			&#123;<br>				<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> k:m)<br>					<span class="hljs-keyword">if</span>(Cnt[i][pos[j]]&lt;k.second)<br>						Num[i][pos[j]]=k.first,Cnt[i][pos[j]]=k.second;<br>					<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(Cnt[i][pos[j]]==k.second &amp;&amp; Num[i][pos[j]]&gt;k.first)<br>						Num[i][pos[j]]=k.first;<br>			&#125;<br>		&#125;<br>	&#125;<br></code></pre></td></tr></table></figure>
 <p><s>被卡常的</s>查询：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt;m;</span><br><span class="line">	<span class="keyword">if</span>(pos[l]==pos[r])</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=r;i++) m[b[i]]++;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=R[pos[l]];i++) m[b[i]]++;	</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=L[pos[r]];i&lt;=r;i++) m[b[i]]++;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">auto</span> i:m)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> x=i.first;</span><br><span class="line">			m[x]+=Sum[pos[r]<span class="number">-1</span>][x]-Sum[pos[l]][x];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(pos[l]+<span class="number">1</span>&lt;=pos[r]<span class="number">-1</span> &amp;&amp; !m[Num[pos[l]+<span class="number">1</span>][pos[r]<span class="number">-1</span>]])</span><br><span class="line">			m[Num[pos[l]+<span class="number">1</span>][pos[r]<span class="number">-1</span>]]+=Cnt[pos[l]+<span class="number">1</span>][pos[r]<span class="number">-1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> num=<span class="number">0</span>,cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> i:m)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(cnt&lt;i.second) cnt=i.second,num=i.first;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(cnt==i.second &amp;&amp; num&gt;i.first) num=i.first;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> dis[num];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>	unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;m;<br>	<span class="hljs-keyword">if</span>(pos[l]==pos[r])<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=r;i++) m[b[i]]++;<br>	<span class="hljs-keyword">else</span><br>	&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=R[pos[l]];i++) m[b[i]]++;	<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=L[pos[r]];i&lt;=r;i++) m[b[i]]++;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i:m)<br>		&#123;<br>			<span class="hljs-type">int</span> x=i.first;<br>			m[x]+=Sum[pos[r]<span class="hljs-number">-1</span>][x]-Sum[pos[l]][x];<br>		&#125;<br>		<span class="hljs-keyword">if</span>(pos[l]+<span class="hljs-number">1</span>&lt;=pos[r]<span class="hljs-number">-1</span> &amp;&amp; !m[Num[pos[l]+<span class="hljs-number">1</span>][pos[r]<span class="hljs-number">-1</span>]])<br>			m[Num[pos[l]+<span class="hljs-number">1</span>][pos[r]<span class="hljs-number">-1</span>]]+=Cnt[pos[l]+<span class="hljs-number">1</span>][pos[r]<span class="hljs-number">-1</span>];<br>	&#125;<br>	<span class="hljs-type">int</span> num=<span class="hljs-number">0</span>,cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i:m)<br>	&#123;<br>		<span class="hljs-keyword">if</span>(cnt&lt;i.second) cnt=i.second,num=i.first;<br>		<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(cnt==i.second &amp;&amp; num&gt;i.first) num=i.first;<br>	&#125;<br><br>	<span class="hljs-keyword">return</span> dis[num];<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="其他好题">其他好题</h2>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4135">P4135 作诗</a></p>
 <p>无修改，多次查询区间出现正偶数次的数的个数。强制在线。</p>
 <p>类比 9，我们预处理前缀出现次数和整块区间的答案，这样就可以涵盖所有情况。</p>
 <p>散块或无整块区间暴力。</p>
 <p>整块直接查表。</p>
-<p>还是比较水的…</p>
 <p>注意：使用 <code>unordered_map</code> 会被卡常。<s>值域都这么小了为什么还要用这个？</s></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">abs</span>(pos[l]-pos[r])&lt;=<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=r;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			M[a[i]]++;</span><br><span class="line">			<span class="keyword">if</span>(!(M[a[i]]&amp;<span class="number">1</span>)) ans++;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(M[a[i]]^<span class="number">1</span>) ans--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=r;i++) M[a[i]]--;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> ans=Ans[pos[l]+<span class="number">1</span>][pos[r]<span class="number">-1</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=R[pos[l]];i++) </span><br><span class="line">		&#123;</span><br><span class="line">			M[a[i]]++;</span><br><span class="line">			<span class="keyword">if</span>(!((M[a[i]]+Cnt[pos[r]<span class="number">-1</span>][a[i]]-Cnt[pos[l]][a[i]])&amp;<span class="number">1</span>)) ans++;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>((M[a[i]]+Cnt[pos[r]<span class="number">-1</span>][a[i]]-Cnt[pos[l]][a[i]])^<span class="number">1</span>)ans--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=L[pos[r]];i&lt;=r;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			M[a[i]]++;</span><br><span class="line">			<span class="keyword">if</span>(!((M[a[i]]+Cnt[pos[r]<span class="number">-1</span>][a[i]]-Cnt[pos[l]][a[i]])&amp;<span class="number">1</span>)) ans++;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>((M[a[i]]+Cnt[pos[r]<span class="number">-1</span>][a[i]]-Cnt[pos[l]][a[i]])^<span class="number">1</span>)ans--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=R[pos[l]];i++) M[a[i]]--; </span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=L[pos[r]];i&lt;=r;i++) M[a[i]]--;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">abs</span>(pos[l]-pos[r])&lt;=<span class="hljs-number">1</span>)<br>	&#123;<br>		<span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=r;i++)<br>		&#123;<br>			M[a[i]]++;<br>			<span class="hljs-keyword">if</span>(!(M[a[i]]&amp;<span class="hljs-number">1</span>)) ans++;<br>			<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(M[a[i]]^<span class="hljs-number">1</span>) ans--;<br>		&#125;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=r;i++) M[a[i]]--;<br>		<span class="hljs-keyword">return</span> ans;<br>	&#125;<br>	<span class="hljs-keyword">else</span><br>	&#123;<br>		<span class="hljs-type">int</span> ans=Ans[pos[l]+<span class="hljs-number">1</span>][pos[r]<span class="hljs-number">-1</span>];<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=R[pos[l]];i++) <br>		&#123;<br>			M[a[i]]++;<br>			<span class="hljs-keyword">if</span>(!((M[a[i]]+Cnt[pos[r]<span class="hljs-number">-1</span>][a[i]]-Cnt[pos[l]][a[i]])&amp;<span class="hljs-number">1</span>)) ans++;<br>			<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>((M[a[i]]+Cnt[pos[r]<span class="hljs-number">-1</span>][a[i]]-Cnt[pos[l]][a[i]])^<span class="hljs-number">1</span>)ans--;<br>		&#125;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=L[pos[r]];i&lt;=r;i++)<br>		&#123;<br>			M[a[i]]++;<br>			<span class="hljs-keyword">if</span>(!((M[a[i]]+Cnt[pos[r]<span class="hljs-number">-1</span>][a[i]]-Cnt[pos[l]][a[i]])&amp;<span class="hljs-number">1</span>)) ans++;<br>			<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>((M[a[i]]+Cnt[pos[r]<span class="hljs-number">-1</span>][a[i]]-Cnt[pos[l]][a[i]])^<span class="hljs-number">1</span>)ans--;<br>		&#125;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=R[pos[l]];i++) M[a[i]]--; <br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=L[pos[r]];i&lt;=r;i++) M[a[i]]--;<br>		<span class="hljs-keyword">return</span> ans;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Old-thing/" class="category-chain-item">Old thing</a>
+  
+  
+
+      </span>
+    
+  
+</span>
 
     </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/OI-archive/" rel="tag"># OI archive</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item"></div>
-      <div class="post-nav-item">
-    <a href="/2023/09/19/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
-    </a></div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/OI-archive/" class="print-no-link">#OI archive</a>
+      
     </div>
-      </footer>
-    
-  </article>
   
-  
-  
+</div>
 
 
+              
+  
 
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>分块</div>
+      <div>http://arctic1010.github.io/2022/03/02/分块/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Arctic_1010</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年3月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
           </div>
-          
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
 
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/24/Hello/" title="Hello">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Arctic1010/Arctic1010.github.io","repo-id":"R_kgDOKVUQPQ","category":"Announcements","category-id":"DIC_kwDOKVUQPc4CsWM3","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
       }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
     });
-  }
+  });
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
+  <script>Fluid.plugins.codeWidget();</script>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E5%9D%97"><span class="nav-number">1.</span> <span class="nav-text">分块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%86%E5%9D%97%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">如何分块？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loj-%E5%B0%8F%E5%88%86%E5%9D%97%E5%85%A5%E9%97%A8%E2%91%A8%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">LOJ 小分块入门⑨题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%A5%BD%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text">其他好题</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Arctic_1010</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">分类</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2025</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Arctic_1010</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-<script src="/js/utils.js"></script>
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
-<script src="/js/motion.js"></script>
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
 
-<script src="/js/schemes/pisces.js"></script>
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
-<script src="/js/next-boot.js"></script>
 
 
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
