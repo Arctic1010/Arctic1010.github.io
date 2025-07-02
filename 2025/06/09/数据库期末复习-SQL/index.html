@@ -1,0 +1,1156 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Arctic_1010">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="SQL 理想情况下，数据库语言应该允许用户：  建立数据库和关系结构。 完成基本数据管理任务，诸如关系中数据的插入、修改和删除。 完成简单或复杂的查询。  SQL 语句有以下几种：  增：用于将数据插人表中。 删：用于删除表中数据。 改：用于更新表中数据。 查：用于查询数据库中的数据。  SQL 语句一般使用 ; 分隔。 SELECT 形式  意思是：查询从 TableName, … 表（别名为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库期末复习-SQL">
+<meta property="og:url" content="http://arctic1010.github.io/2025/06/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0-SQL/">
+<meta property="og:site_name" content="Arctic_1010&#39;s temporary blog">
+<meta property="og:description" content="SQL 理想情况下，数据库语言应该允许用户：  建立数据库和关系结构。 完成基本数据管理任务，诸如关系中数据的插入、修改和删除。 完成简单或复杂的查询。  SQL 语句有以下几种：  增：用于将数据插人表中。 删：用于删除表中数据。 改：用于更新表中数据。 查：用于查询数据库中的数据。  SQL 语句一般使用 ; 分隔。 SELECT 形式  意思是：查询从 TableName, … 表（别名为">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250607234709710.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609114346382.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609144757109.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609151136043.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609171756406.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609171854914.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609172312792.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609173730528.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609173718304.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609173950705.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609175741497.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609175857342.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609183450313.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609182906297.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609183350266.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609183358817.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609183756821.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609184701464.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609185148697.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609185226000.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609185311336.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609185856377.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609190400970.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20250609203336482.png">
+<meta property="article:published_time" content="2025-06-09T12:43:11.000Z">
+<meta property="article:modified_time" content="2025-07-02T02:56:15.359Z">
+<meta property="article:author" content="Arctic_1010">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Review">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://arctic1010.github.io/img/assets/image-20250607234709710.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>数据库期末复习-SQL - Arctic_1010&#39;s temporary blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"arctic1010.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-7QPRQL6WWE"},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-7QPRQL6WWE", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-7QPRQL6WWE');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Arctic_1010&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="数据库期末复习-SQL"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-09 20:43" pubdate>
+          2025年6月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">数据库期末复习-SQL</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="sql">SQL</h1>
+<p>理想情况下，数据库语言应该允许用户：</p>
+<ul>
+<li>建立数据库和关系结构。</li>
+<li>完成基本数据管理任务，诸如关系中数据的插入、修改和删除。</li>
+<li>完成简单或复杂的查询。</li>
+</ul>
+<p>SQL 语句有以下几种：</p>
+<ul>
+<li><strong>增</strong>：用于将数据插人表中。</li>
+<li><strong>删</strong>：用于删除表中数据。</li>
+<li><strong>改</strong>：用于更新表中数据。</li>
+<li><strong>查</strong>：用于查询数据库中的数据。</li>
+</ul>
+<p>SQL 语句一般使用 <code>;</code> 分隔。</p>
+<h2 id="select">SELECT</h2>
+<h3 id="形式">形式</h3>
+<p><img src="/img/assets/image-20250607234709710.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>意思是：查询从 TableName, … 表（别名为 alias, …）中，满足（非聚集型）condition 的行，按具有相同属性的值分成组，满足（聚集性）condition 的组，选出查询结果中的列，并按某些列排序并返回。</p>
+<p>可以看出，其执行顺序为：<strong>FROM</strong>，WHERE，GROUP BY，HAVING，<strong>SELECT</strong>，ORDER BY</p>
+<h3 id="单表查询">单表查询</h3>
+<h4 id="from-where">FROM / WHERE</h4>
+<ol>
+<li>列出所有员工的月工资列表。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> staffNo, fName, lName, salary<span class="hljs-operator">/</span><span class="hljs-number">12</span> <span class="hljs-keyword">FROM</span> Staff;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>列出工资高于 10000 元的所有员工。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Staff <span class="hljs-keyword">WHERE</span> salary <span class="hljs-operator">&gt;</span> <span class="hljs-number">10000</span>;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>列出工资在 10000 元到 20000 元之间的所有员工。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Staff <span class="hljs-keyword">WHERE</span> salary <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">10000</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">20000</span>;<br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Staff <span class="hljs-keyword">WHERE</span> salary <span class="hljs-operator">&gt;=</span> <span class="hljs-number">10000</span> <span class="hljs-keyword">AND</span> salary <span class="hljs-operator">&lt;=</span> <span class="hljs-number">20000</span>;<br></code></pre></td></tr></table></figure>
+<p>Tips: SQL 语句中可用的比较运算符如下：</p>
+<p><img src="/img/assets/image-20250609114346382.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>SQL 中，NOT 优先于 AND 和 OR，AND 优先于 OR。一般用括号消除歧义。</p>
+<ol start="4">
+<li>列出所有的经理和主管，且地址含有字符串 <code>Glasgow</code>。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Staff <br><span class="hljs-keyword">WHERE</span> position <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;Manager&#x27;</span>, <span class="hljs-string">&#x27;Supervisor&#x27;</span>) <br><span class="hljs-keyword">AND</span> address <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;%Glasgow%&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>列出查看过房产编号为 PG4 的房产但没有留下意见的客户的情况。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> clientNo, viewDate <span class="hljs-keyword">FROM</span> Viewing<br><span class="hljs-keyword">WHERE</span> propertyNo<span class="hljs-operator">=</span><span class="hljs-string">&#x27;PG4&#x27;</span> <span class="hljs-keyword">AND</span> comment <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>;<br></code></pre></td></tr></table></figure>
+<h4 id="order-by">ORDER BY</h4>
+<ol start="6">
+<li>列出所有职工的工资列表，按第一关键字为工资，第二关键字为员工名降序。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> staffNo, fName, lName, salary<br><span class="hljs-keyword">FROM</span> Staff<br><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> salary, fName <span class="hljs-keyword">DESC</span>;<br></code></pre></td></tr></table></figure>
+<h4 id="聚集函数">聚集函数</h4>
+<ul>
+<li><code>COUNT</code>：返回指定列中数据的个数。
+<ul>
+<li><code>COUNT(*)</code> 和 <code>COUNT(1)</code> 的统计包含 NULL 值。</li>
+</ul>
+</li>
+<li><code>SUM</code>：返回指定列中数据的总和。</li>
+<li><code>AVG</code>：返回指定列中数据的平均值。</li>
+<li><code>MIN</code>：返回指定列中数据的最小值。</li>
+<li><code>MAX</code>：返回指定列中数据的最大值。</li>
+</ul>
+<p>聚集函数不能用于 WHERE 子句。</p>
+<ol start="7">
+<li>月租金超过 350 英镑的房产有多少处？</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">COUNT</span>(<span class="hljs-operator">*</span>) <span class="hljs-keyword">AS</span> MyCount <span class="hljs-keyword">FROM</span> PropertyForRent<br><span class="hljs-keyword">WHERE</span> rent <span class="hljs-operator">&gt;</span> <span class="hljs-number">350</span>;<br></code></pre></td></tr></table></figure>
+<ol start="8">
+<li>2025 年 5 月有多少处不同的房产被查看过？</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">COUNT</span>(<span class="hljs-keyword">DISTINCT</span> propertyNo) <span class="hljs-keyword">AS</span> myCount <span class="hljs-keyword">FROM</span> Viewing<br><span class="hljs-keyword">WHERE</span> viewDate <span class="hljs-keyword">BETWEEN</span> <span class="hljs-string">&#x27;1-May-25&#x27;</span> <span class="hljs-keyword">AND</span> <span class="hljs-string">&#x27;31-May-25&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<h4 id="group-by-having">GROUP BY / HAVING</h4>
+<p><code>GROUP BY</code> 是用来<strong>对结果集进行分组</strong>的，通常与聚集函数搭配使用。</p>
+<ol start="9">
+<li>找出工作在每一个分公司的员工人数。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> branchNo, <span class="hljs-built_in">COUNT</span>(staffNo) <span class="hljs-keyword">AS</span> myCount <span class="hljs-keyword">FROM</span> Staff<br><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> branchNo;<br></code></pre></td></tr></table></figure>
+<p>这里 <code>GROUP BY</code> 的意思是，以 <code>branchNo</code> 的<strong>值</strong>为分组依据，对<strong>每组</strong>分别求 <code>COUNT</code>。</p>
+<p>课本上有一句话：</p>
+<blockquote>
+<p>SELECT 子句中的所有列除非用在聚集函数中，否则必须在 GROUP BY 子句中出现。</p>
+</blockquote>
+<p>这是为了避免逻辑上的歧义 —— 因为在分组统计时，你要明确告诉数据库<strong>按哪些列来分组，其它列应该如何处理</strong>。</p>
+<p>课本上一句非法的 SQL：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> staffNo, <span class="hljs-built_in">COUNT</span>(salary) <span class="hljs-keyword">FROM</span> Staff;<br></code></pre></td></tr></table></figure>
+<p>因为 <code>staffNo</code> 不用于分组依据，但是同时还会查询 <code>salary</code> 的聚集函数。所以查询出的 <code>staffNo</code> 没有分组，SQL 这时因为不知道此列的分组和返回值而报错。</p>
+<p>对聚集函数的约束，使用 <code>HAVING</code> 子句。它是用在 <code>GROUP BY</code> 之后的，作用类似 <code>WHERE</code>，但 <code>WHERE</code> 是对<strong>原始数据</strong>筛选，<code>HAVING</code> 是对<strong>分组结果</strong>筛选。</p>
+<ol start="10">
+<li>对于员工人数多于一人的分公司，计算出每一个分公司的员工人数和他们的工资总和。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> branchNo, <span class="hljs-built_in">COUNT</span>(staffNo) <span class="hljs-keyword">AS</span> myCount, <span class="hljs-built_in">SUM</span>(salary) <span class="hljs-keyword">AS</span> mySum<br><span class="hljs-keyword">FROM</span> Staff<br><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> branchNo<br><span class="hljs-keyword">HAVING</span> <span class="hljs-built_in">COUNT</span>(staffNo) <span class="hljs-operator">&gt;</span><span class="hljs-number">1</span><br><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> branchNo:<br></code></pre></td></tr></table></figure>
+<h3 id="多次查询与多表查询">多次查询与多表查询</h3>
+<h4 id="子查询">子查询</h4>
+<p>查询返回值本质为表。所以可以将 SELECT 语句完全嵌套到另一个 SELECT 语句中。</p>
+<p>用于比较时，子查询需放在式子右边。</p>
+<ol start="11">
+<li>列出在位于 <code>163 Main St</code> 的分公司中工作的员工的情况。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> staffNo, fName, lName, position <span class="hljs-keyword">FROM</span> Staff<br><span class="hljs-keyword">WHERE</span> branchNo <span class="hljs-operator">=</span> (<span class="hljs-keyword">SELECT</span> branchNo <span class="hljs-keyword">FROM</span> Branch <span class="hljs-keyword">WHERE</span> street <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;163 Main St&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<ol start="12">
+<li>列出正由位于 <code>163 Main St</code> 的分公司的员工经营的房产。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> propertyNo, street, city, postcode, type, rooms, rent<br><span class="hljs-keyword">FROM</span> PropertyForRent<br><span class="hljs-keyword">WHERE</span> staffNo <span class="hljs-keyword">IN</span> <br>(<span class="hljs-keyword">SELECT</span> staffNo <span class="hljs-keyword">FROM</span> Staff <span class="hljs-keyword">WHERE</span> branchNo <span class="hljs-operator">=</span> <br> (<span class="hljs-keyword">SELECT</span> branchNo <span class="hljs-keyword">FROM</span> Branch <span class="hljs-keyword">WHERE</span> street <span class="hljs-operator">=</span><span class="hljs-string">&#x27;163 Main St&#x27;</span>)<br>);<br></code></pre></td></tr></table></figure>
+<p>限定词 <code>ALL</code> 和 <code>ANY/SOME</code> 用于对于子查询的比较。含有 <code>ALL</code> 的条件为真当且仅当子查询产生的所有值都满足条件。<code>ANY/SOME</code> 条件只需至少一个值满足即可。</p>
+<ol start="13">
+<li>列出工资高于分公司 <code>B003</code> 中任何员工的工资的所有员工。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> staffNo, fName, IName, position, salary<br><span class="hljs-keyword">FROM</span> Staff<br><span class="hljs-keyword">WHERE</span> salary <span class="hljs-operator">&gt;</span> <span class="hljs-keyword">ALL</span> (<span class="hljs-keyword">SELECT</span> salary <span class="hljs-keyword">FROM</span> Staff <span class="hljs-keyword">WHERE</span> branchNo<span class="hljs-operator">=</span><span class="hljs-string">&#x27;B003&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<h4 id="多表查询">多表查询</h4>
+<ol start="14">
+<li>列出查看过房产的所有客户的姓名及其所提的意见。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> c.clientNo, fName,IName, propertyNo, comment<br><span class="hljs-keyword">FROM</span> Client c, Viewing v<br><span class="hljs-keyword">WHERE</span> c.clientNo<span class="hljs-operator">=</span>v.clientNo;<br></code></pre></td></tr></table></figure>
+<p>Tips：如果两个表的查询不使用 <code>WHERE</code> 子句，那么 SQL 产生的查询结果是两个表的笛卡尔乘积。</p>
+<h4 id="连接">连接</h4>
+<ol start="15">
+<li>对于表 A 和表 B，其共用列用重叠区域表示。</li>
+</ol>
+<p><img src="/img/assets/image-20250609144757109.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>内连接：查询结果为 c。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> A.<span class="hljs-operator">*</span>, B.<span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> A, B <span class="hljs-keyword">WHERE</span> A.name <span class="hljs-operator">=</span> B.name<br></code></pre></td></tr></table></figure>
+<p>左外连接：查询结果为 a，c。B 表里无匹配的行用 NULL 填充。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> A.<span class="hljs-operator">*</span>, B.<span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> A <span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.name <span class="hljs-operator">=</span> B.name<br></code></pre></td></tr></table></figure>
+<p>右外连接：查询结果为 b，c。A 表里无匹配的行用 NULL 填充。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> A.<span class="hljs-operator">*</span>, B.<span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> A <span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.name <span class="hljs-operator">=</span> B.name<br></code></pre></td></tr></table></figure>
+<p>全外连接：查询结果为 a，b，c。A 表里无匹配 B，B 表里无匹配 A 的行用 NULL 填充。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> A.<span class="hljs-operator">*</span>, B.<span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> A <span class="hljs-keyword">FULL</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.name <span class="hljs-operator">=</span> B.name<br></code></pre></td></tr></table></figure>
+<h4 id="exists">EXISTS</h4>
+<p>仅用于子查询中，如果查询结果有至少一行，返回真；否则返回假。可用 NOT 修饰。</p>
+<ol start="16">
+<li>找出工作在伦敦分公司的所有员工。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> staffNo, fName, lNaMe,position<br><span class="hljs-keyword">FROM</span> Staff s<br><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">EXISTS</span> (<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Branch b<br>			  <span class="hljs-keyword">WHERE</span> s.branchNo <span class="hljs-operator">=</span> b.branchNo <span class="hljs-keyword">AND</span> city <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;London&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<h4 id="union-intersect-except">UNION / INTERSECT / EXCEPT</h4>
+<p>用于执行多表查询集合的并 / 交 / 差。</p>
+<p>加 <code>CORRESPONDING BY</code> 表示操作在对应列进行。</p>
+<ol start="17">
+<li>建立有分公司<strong>或</strong>有房产的所有城市的列表。</li>
+</ol>
+<p><img src="/img/assets/image-20250609151136043.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol start="18">
+<li>建立<strong>既</strong>有分公司<strong>又</strong>有房产的所有城市的列表。</li>
+</ol>
+<p><img src="/img/assets/image-20250609171756406.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol start="19">
+<li>建立有分公司但是没有房产的所有城市的列表。</li>
+</ol>
+<p><img src="/img/assets/image-20250609171854914.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="insert-update-delete">INSERT / UPDATE / DELETE</h2>
+<h3 id="insert">INSERT</h3>
+<h4 id="insert-into">INSERT INTO</h4>
+<p>命令格式：</p>
+<p><img src="/img/assets/image-20250609172312792.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>插入数据时，要指定列名，或者按照表中原本出现的顺序插入。</p>
+<ol start="20">
+<li>在 Staff 表中插入一行。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Staff (staffNo, fName, IName, position, salary, branchNo)<br><span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;SG44&#x27;</span>, <span class="hljs-string">&#x27;Anne&#x27;</span>, <span class="hljs-string">&#x27;Jones&#x27;</span>, <span class="hljs-string">&#x27;Assistant&#x27;</span>, <span class="hljs-number">8100</span>, <span class="hljs-string">&#x27;B003&#x27;</span>);<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Staff<br><span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;SG44&#x27;</span>, <span class="hljs-string">&#x27;Anne&#x27;</span>, <span class="hljs-string">&#x27;Jones&#x27;</span>, <span class="hljs-string">&#x27;Assistant&#x27;</span>, <span class="hljs-keyword">NULL</span>, <span class="hljs-keyword">NULL</span>, <span class="hljs-number">8100</span>, <span class="hljs-string">&#x27;B003&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<h4 id="insert-select">INSERT … SELECT</h4>
+<p>命令格式：</p>
+<p><img src="/img/assets/image-20250609173730528.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol start="21">
+<li>
+<p>假设表 StaffPropCount 中包含员工的名字及他所管理的房产的数目。</p>
+<p>StaffPropCount(staffNo, fName, IName, propCount)</p>
+<p>用表 Staff 和表 PropertyForRent 中的数据产生表 StaffPropCount。</p>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> StaffPropCount<br>(<br>    <span class="hljs-keyword">SELECT</span> s.staffNo, fName, lName, <span class="hljs-built_in">COUNT</span>(<span class="hljs-operator">*</span>)<br> 	<span class="hljs-keyword">FROM</span> Staff s,PropertyForRent p<br> 	<span class="hljs-keyword">WHERE</span> s.staffNo<span class="hljs-operator">=</span>p.staffNo<br> 	<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> s.staffNo, fName, lName<br>)<br><span class="hljs-keyword">UNION</span><br>(<br>    <span class="hljs-keyword">SELECT</span> staffNo, fName, lName, <span class="hljs-number">0</span><br> 	<span class="hljs-keyword">FROM</span> Staff s<br> 	<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> <br>    (<br>      <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span><br>   	  <span class="hljs-keyword">FROM</span> PropertyForRent p<br>   	  <span class="hljs-keyword">WHERE</span> p.staffNo<span class="hljs-operator">=</span> S.staffNo<br>    )<br>);<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>提问：为什么要有 <code>UNION</code> 后的部分？</p>
+</blockquote>
+<h3 id="update">UPDATE</h3>
+<p>命令格式：</p>
+<p><img src="/img/assets/image-20250609173718304.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol start="22">
+<li>提升 SG14 为经理，工资变为原来的 1.05 倍。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> Staff<br><span class="hljs-keyword">SET</span> position <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Manager&#x27;</span>, salary <span class="hljs-operator">=</span> salary <span class="hljs-operator">*</span> <span class="hljs-number">1.05</span><br><span class="hljs-keyword">WHERE</span> staffNo<span class="hljs-operator">=</span><span class="hljs-string">&#x27;SG14&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="delete">DELETE</h3>
+<p>命令格式：</p>
+<p><img src="/img/assets/image-20250609173950705.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol start="23">
+<li>删除所有与房产 SG4 有关的行。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> Viewing <span class="hljs-keyword">WHERE</span> propertyNo<span class="hljs-operator">=</span><span class="hljs-string">&#x27;PG4&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<ol start="24">
+<li>从表 Viewing 中删除所有行。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> Viewing;<br></code></pre></td></tr></table></figure>
+<h2 id="完整性约束">完整性约束</h2>
+<p>完整性约束分为：</p>
+<ul>
+<li>必须有值的数据</li>
+<li>域约束</li>
+<li>实体完整性</li>
+<li>引用完整性</li>
+<li>一般性约束</li>
+</ul>
+<p>这些约束能用 <code>CREATE</code> 和 <code>ALTER TABLE</code> 语句定义</p>
+<h3 id="必须有值的数据">必须有值的数据</h3>
+<p>某些列的值必须为有效值，不允许为空。空不同于空格或零，而是用来表示数据不可用、丢失或不合适。例如，每一个员工必须有相应的职位（比如经理、助理等）。</p>
+<p>ISO 标准为 CREATE 和 ALTER TABLE 语句提供的 NOT NULL 列说明符实现了这种约束。</p>
+<p>若指定列为 NOT NULL，则系统拒绝向列中插人空值；若指定列为 NULL，则系统接受空值。ISO 默认值为 NULL。例如，</p>
+<ol start="24">
+<li>定义表 Staff 中的列 position 不能为空。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">position <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span><br></code></pre></td></tr></table></figure>
+<h3 id="域约束-check">域约束 CHECK</h3>
+<h4 id="check-子句">CHECK 子句</h4>
+<p>每列都有一个域，换句话说，就是合法值的集合。</p>
+<p>CHECK 子句的格式如下：</p>
+<p><img src="/img/assets/image-20250609175741497.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol start="25">
+<li>员工的性别为“M”或“F”。表 Staff 中的列 sex 的域为仅包含“M”和“F”的字符集。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">sex <span class="hljs-type">CHAR</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">CHECK</span> (sex <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h4 id="domain">DOMAIN</h4>
+<p>ISO 标准允许用 CREATE DOMAIN 显式地定义域 DomainName。格式如下：</p>
+<p><img src="/img/assets/image-20250609175857342.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>同时指定了可选的默认值 defaultOption 和可选的 CHECK 约束。</p>
+<p>从数据库撤销约束用 DROP DOMAIN 语句。</p>
+<p><img src="/img/assets/image-20250609183450313.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>删除模式指定为 RESTRICT 时，如果该域正在被表、视图、断言使用，则删除失败。指定为 CASCADE 时，层叠地更改正在使用此域的表为该域的基类型定义。域上的约束或 DEFAULT 会被列约束和列 DEFAULT 子句代替。</p>
+<ol start="26">
+<li>用 CREATE DOMAIN 解决 25.。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DOMAIN SexType <span class="hljs-keyword">AS</span> <span class="hljs-type">CHAR</span><br><span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;M&#x27;</span><br><span class="hljs-keyword">CHECK</span> (<span class="hljs-keyword">VALUE</span> <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>);<br><br>sex SexType <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span><br></code></pre></td></tr></table></figure>
+<ol start="27">
+<li>创建域 BranchNumber，确保输入的值是表 Branch 中已存在的分公司。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DOMAIN BranchNumber <span class="hljs-keyword">AS</span> <span class="hljs-type">CHAR</span>(<span class="hljs-number">4</span>)<br><span class="hljs-keyword">CHECK</span> (<span class="hljs-keyword">VALUE</span> <span class="hljs-keyword">IN</span> (<span class="hljs-keyword">SELECT</span> branchNo <span class="hljs-keyword">FROM</span> Branch);<br></code></pre></td></tr></table></figure>
+<ol start="28">
+<li>撤销域约束 BranchNumber。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> DOMAIN BranchNumber<br></code></pre></td></tr></table></figure>
+<h3 id="实体完整性-primary-key">实体完整性 Primary Key</h3>
+<p>表中每一行的主关键字必须是唯一的非空值。例如，表 PropertyForRent 的每一行都有一个唯一的房产编号 propertyNo 值，它能唯一地标识该行代表的房产。ISO 标准在 <code>CREATE</code> 和 <code>ALTER TABLE</code> 语句中用 PRIMARY KEY 子句支持实体完整性。</p>
+<ol start="29">
+<li>定义表 PropertyForRent 的主关键字。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">PRIMARY</span> KEY(propertyNo)<br></code></pre></td></tr></table></figure>
+<ol start="30">
+<li>定义表 Viewing 的组合主关键字 clientNo 和 propertyNo。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">PRIMARY</span> KEY(clientNo, propertyNo)<br></code></pre></td></tr></table></figure>
+<p>每个表中只能使用一个 PRIMARY KEY 子句。但是，可用关键字 UNIQUE 保证列的唯一性。</p>
+<p>UNIQUE 子句中出现的每个列必须被声明为 NOT NULL。每个表中可能有多个 UNIQUE 子句。若 INSERT 或 UPDATE 操作试图为候选关键字（即主关键字或可选关键字）创建重复值，SQL将会拒绝操作。</p>
+<h3 id="引用完整性-foreign-key">引用完整性 Foreign Key</h3>
+<p>外部关键字是某个列或列集合，它把包含外部关键字的子表中的每个元组与父表中包含匹配候选关键字值的元组关联起来。引用完整性是指，外部关键字必须是父表中已存在的有效的元组。</p>
+<p>ISO 标准允许在 CREATE 和  ALTER TABLE 语句中使用 FOREIGN KEY 子句定义外部关键字。</p>
+<ol start="31">
+<li>定义表 PropertyForRent 的外部关键字 branchNo：</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">FOREIGN</span> KEY(branchNo) <span class="hljs-keyword">REFERENCES</span> Branch<br></code></pre></td></tr></table></figure>
+<h4 id="referential-action">Referential Action</h4>
+<p>在子表中若试图用 INSERT 和 UPDATE 操作，创建与父表中候选关键字不匹配的外部关键字，SQL 则会拒绝该操作。而在父表中若试图用 UPDATE 和 DELETE 操作更新或删除与子表有匹配行的候选关键字，SQL 将根据 FOREIGN KEY 子句中的 ON UPDATE 或 ON DELETE 子句来决定如何执行该操作。当用户企图删除父表中的某行时，子表中有一个或多个匹配行，SQL 有四种选择：</p>
+<ul>
+<li><code>CASCADE</code>：删除父表中的行并且自动删除子表中匹配的行。由于删除的行可能有候选关键字是另一个表的外部关键字，所以这些表的外部关键字规则就会以级联的方式相继触发。</li>
+<li><code>SET NULL</code>：删除父表中的元组且设置子表中的外部关键字为 NULL。只有当外部关键字列没有指定为 NOT NULL 时，这样做才是有效的。</li>
+<li><code>SET DEFAULT</code>：删除父表中的元组且设子表中的外部关键字为默认值。只有当外部关键字列指定了 DEFAULT 值时，这样做才是有效的。</li>
+<li><code>NO ACTION</code>：拒绝对父表进行删除操作。是 <code>ON DELETE</code> 的默认操作。</li>
+</ul>
+<ol start="32">
+<li>指定更新规则为，如果表 PrivateOwner 中的业主编号更新，则表 PropertyForRent 中的相应列设置为更新值。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">FOREIGN</span> KEY (ownerNo) <span class="hljs-keyword">REFERENCES</span> PrivateOwner <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> CASCADE<br></code></pre></td></tr></table></figure>
+<h3 id="一般性约束-assertion">一般性约束 ASSERTION</h3>
+<p>对表的更新可能受到企业规则的约束，企业规则用来控制该更新操作所代表的现实世界中的事务。例如，DreamHome 可能有规定，禁止员工同时管理 100 个以上房产。</p>
+<p>ISO 标准允许用 <code>CREATE</code> 和 <code>ALTER TABLE</code> 语句中的 <code>CHECK</code> 和 <code>UNIQUE</code> 子句以及 <code>CREATE ASSERTION</code> 语句指定一般性约束。</p>
+<p><code>CREATE ASSERTION</code> 语句是不直接与表定义相关联的完整性约束。语句格式如下：</p>
+<p><img src="/img/assets/image-20250609182906297.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol start="33">
+<li>DreamHome 规定，禁止员工同时管理 100 个以上房产。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> ASSERTION StaffNotHandlingTooMuch<br><span class="hljs-keyword">CHECK</span> (<span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> <br>      (<span class="hljs-keyword">SELECT</span> staffNo <span class="hljs-keyword">FROM</span> PropertyForRent <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> staffNo <span class="hljs-keyword">HAVING</span> <span class="hljs-built_in">COUNT</span>(<span class="hljs-operator">*</span>) <span class="hljs-operator">&gt;</span><span class="hljs-number">100</span>));<br></code></pre></td></tr></table></figure>
+<h2 id="数据定义">数据定义</h2>
+<h3 id="schema">SCHEMA</h3>
+<p>根据 ISO 标准，关系和其他的数据库对象都存在于某个环境中。每个环境含一个或多个目录，每个目录中包括一组<strong>模式</strong>。模式是一组数据库对象的命名集合，该集合中的对象以某种方式相互关连（数据库中出现的任一对象恰在一个模式中描述）。</p>
+<p><img src="/img/assets/image-20250609183350266.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="/img/assets/image-20250609183358817.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>如果指定了 RESTRICT ，则模式必须为空，否则删除操作将失败。如果指定 CASCADE ，那么将按前面定义的顺序级联地删除与模式相关的所有对象。</p>
+<h3 id="table">TABLE</h3>
+<h4 id="create">CREATE</h4>
+<p>创建表结构 CREATE TABLE 语句基本规则如下：</p>
+<p><img src="/img/assets/image-20250609183756821.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>其他语句前文已经讲过，除了用于定义外键约束的 <code>REFERENCES</code>。</p>
+<p>其作用是在当前表中指定某一列为<strong>外键</strong>，并<strong>引用另一张表的主键或唯一键</strong>，从而在逻辑上建立表与表之间的关联。</p>
+<ol start="34">
+<li>
+<p>有表定义：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> departments (<br>    dept_id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY,<br>    dept_name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>)<br>);<br></code></pre></td></tr></table></figure>
+<p>建立子表 employees，引用 departments 的 <code>dept_id</code>。</p>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> employees (<br>    emp_id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY,<br>    emp_name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>),<br>    dept_id <span class="hljs-type">INT</span>,<br>    <span class="hljs-keyword">FOREIGN</span> KEY (dept_id) <span class="hljs-keyword">REFERENCES</span> departments(dept_id)<br>);<br></code></pre></td></tr></table></figure>
+<h4 id="alter">ALTER</h4>
+<p><code>ALTER TABLE</code> 用于改变表的结构。包含：</p>
+<ul>
+<li>在表中添加一个新列</li>
+<li>从表中删除一个列</li>
+<li>添加一项新的表约束</li>
+<li>删除一项表约束</li>
+<li>设置列默认值</li>
+<li>删除列默认值</li>
+</ul>
+<p>语句基本格式：</p>
+<p><img src="/img/assets/image-20250609184701464.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol start="35">
+<li>修改表 Staff，删除列 position 的默认值 Assistant，且设置列 sex 的默认值为女性（F）。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Staff <span class="hljs-keyword">ALTER</span> position <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DEFAULT</span>;<br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Staff <span class="hljs-keyword">ALTER</span> Sex <span class="hljs-keyword">SET</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;F&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<ol start="36">
+<li>修改表 PropertyForRent，删除员工不能同时管理 100 处以上房产的约束。修改表 Client，增加一个新的列表示他对房间数的意愿。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> PropertyForRent <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> StaffNotHandlingTooMuch;<br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Client <span class="hljs-keyword">ADD</span> prefNoRooms PropertyRooms;<br></code></pre></td></tr></table></figure>
+<h4 id="drop">DROP</h4>
+<p><img src="/img/assets/image-20250609185148697.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="index">INDEX</h3>
+<p>索引是一种结构，它提供了基于一个或多个列值快速访问表中元组的方法。</p>
+<p>创建：</p>
+<p><img src="/img/assets/image-20250609185226000.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>删除：</p>
+<p><img src="/img/assets/image-20250609185311336.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="view">VIEW</h3>
+<p>视图是<strong>封装查询逻辑的虚拟表</strong>，用于简化 SQL、增强安全性和可维护性，但它不存储数据。适合经常复用的复杂查询。</p>
+<h4 id="create">CREATE</h4>
+<p><img src="/img/assets/image-20250609185856377.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>subselect 称为定义查询。如果说明 WITH CHECK OPTION，SQL 将确保那些不满足定义查询中 WHERE 子句的行不会被添加到视图的基表中。</p>
+<p>水平视图限制用户只能访问一个或多个表中选定的元组。</p>
+<p>垂直视图限制用户只能访问一个或多个表中选定的列。</p>
+<ol start="37">
+<li>创建一个（水平）视图，让分公司 B003 的经理只看到他所在分公司的员工的情况。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> Manager3Staff <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Staff <span class="hljs-keyword">WHERE</span> branchNo <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;B003&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<p>要确保该分公司的经理只看到这些元组，就不应该允许他访问基表 Staff 。而是给他访问视图 Manger3Staff 的权限。效果上，就是为分公司经理定制了表 Staff 的一个视图，通过它只能看到他所在分公司的员工的情况。</p>
+<ol start="38">
+<li>建立一个（垂直）视图，包括分公司 B003 员工的除工资外的信息，为的是只让经理看到员工的工资情况。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> Staff3<br><span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span> staffNo, fName,IName, position, sex<br><span class="hljs-keyword">FROM</span> Staff <span class="hljs-keyword">WHERE</span> branchNo <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;B003&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<ol start="39">
+<li>创建负责管理出租房产的员工的视图，包括员工所在分公司的编号、员工编号和他们管理的房产的数量。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> StaffPropCnt (branchNo,staffNo, cnt)<br><span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span> s.branchNo, s.staffNo, <span class="hljs-built_in">COUNT</span>(<span class="hljs-operator">*</span>)<br><span class="hljs-keyword">FROM</span> Staff s, PropertyForRent p<br><span class="hljs-keyword">WHERE</span> s.staffNo <span class="hljs-operator">=</span> p.staffNo<br><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> s.branchNo, s.staffNo;<br></code></pre></td></tr></table></figure>
+<h4 id="drop">DROP</h4>
+<p><img src="/img/assets/image-20250609190400970.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="视图分解">视图分解</h4>
+<p>视图分解就是将对视图的查询与视图的定义查询合并。学习视图分解的意义在于理解对视图进行的查询过程。</p>
+<ol start="40">
+<li>
+<p>视图分解以下查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> staffNo, cnt <span class="hljs-keyword">FROM</span> StaffPropCnt <span class="hljs-keyword">WHERE</span> branchNo<span class="hljs-operator">=</span><span class="hljs-string">&#x27;B003&#x27;</span> <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> staffNo;<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> s.staffNo <span class="hljs-keyword">AS</span> staffNo,<span class="hljs-built_in">COUNT</span>(<span class="hljs-operator">*</span>) AScnt<br><span class="hljs-keyword">FROM</span> Staff s, PropertyForRent p<br><span class="hljs-keyword">WHERE</span> s.staffNo<span class="hljs-operator">=</span>p.staffNo <span class="hljs-keyword">AND</span> branchNo<span class="hljs-operator">=</span><span class="hljs-string">&#x27;B003&#x27;</span><br><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> s.branchNo,s.staffNo<br><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> s.staffNo;<br></code></pre></td></tr></table></figure>
+<h4 id="视图的局限性">视图的局限性</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">COUNT</span>(cnt) <span class="hljs-keyword">FROM</span> StaffPropCnt;<br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> StaffPropCnt <span class="hljs-keyword">WHERE</span> cnt <span class="hljs-operator">&gt;</span><span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure>
+<p>这两个查询会失败。因为如果视图中某个列是基于聚集函数的，那么在访问该视图的查询语句中，该列只能出现在 <code>SELECT</code> 和 <code>ORDER BY</code> 子句里。而不能出现在 <code>WHERE</code> 子句中，也不能作为任何聚集函数的参数。</p>
+<h4 id="视图的可更新性">视图的可更新性</h4>
+<p>为了使视图可更新，对于任何一个行或列，DBMS 必须都能追溯到其源表中相应的行或列。</p>
+<h4 id="with-check-option">WITH CHECK OPTION</h4>
+<p><strong>通过视图插入或更新的数据，必须满足视图定义的条件（WHERE 子句）</strong>，否则操作会被拒绝。默认情况下，你可以通过视图更新或插入一些“不属于该视图的数据”，这在逻辑上是很危险的。<code>WITH CHECK OPTION</code> 就是为了防止这种“<strong>绕过视图定义条件</strong>”的操作。</p>
+<p>如果指定了 <code>WITH LOCAL CHECK OPTION</code>，那么在该视图或由该视图直接或间接导出的视图上进行插入或更新操作时，不允许行迁移出视图，<strong>除非该行也迁移出底层视图或表</strong>。</p>
+<p>如果指定了 <code>WITH CASCADED CHECK OPTION</code>（默认设置)，那么在该视图或由该视图直接或间接导出的视图上进行行插入或更新操作时，都不允许行迁移出该视图。一般使用这个创建视图。</p>
+<p><img src="/img/assets/image-20250609203336482.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="视图物化">视图物化</h4>
+<p>把第一次访问视图的结果存储为数据库的临时表。比重新计算视图快得多。</p>
+<h4 id="视图的优缺点">视图的优缺点</h4>
+<p>数据独立性，实时性，提高安全性，降低复杂性，方便，用户化，数据完整性。</p>
+<p>更新局限性，结构局限性，性能开销。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/SCU/" class="category-chain-item">SCU</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Study/" class="print-no-link">#Study</a>
+      
+        <a href="/tags/Review/" class="print-no-link">#Review</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>数据库期末复习-SQL</div>
+      <div>http://arctic1010.github.io/2025/06/09/数据库期末复习-SQL/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Arctic_1010</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/06/09/%E8%A7%84%E8%8C%83%E5%8C%96/" title="数据库期末复习-规范化">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数据库期末复习-规范化</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/06/09/%E6%AF%9B%E6%A6%82%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="毛概期末复习">
+                        <span class="hidden-mobile">毛概期末复习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Arctic1010/Arctic1010.github.io","repo-id":"R_kgDOKVUQPQ","category":"Announcements","category-id":"DIC_kwDOKVUQPc4CsWM3","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
