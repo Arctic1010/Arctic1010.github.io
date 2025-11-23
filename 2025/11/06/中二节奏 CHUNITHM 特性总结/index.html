@@ -27,7 +27,7 @@
 <meta property="og:description" content="中二节奏 CHUNITHM 特性总结 谱面难度 难度区间：1 ~ 15+（1.0 ~ 15.7） 计入 Rating：Basic、Advanced、Expert、Master、Ultima 不计入 Rating：World’s End（不在本文章讨论范围） 判定及判定区间 Justice Heaven 正义天堂（也被称为 Justice Critical+）和 Justice Critical 的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-05T16:20:20.000Z">
-<meta property="article:modified_time" content="2025-11-07T17:14:20.398Z">
+<meta property="article:modified_time" content="2025-11-23T12:05:35.379Z">
 <meta property="article:author" content="Arctic_1010">
 <meta property="article:tag" content="Games">
 <meta name="twitter:card" content="summary_large_image">
@@ -471,7 +471,7 @@
 <p>对于 Tap 及类 Tap 类物件，如果在 Attack 及以内判定区间，对物件对触摸板覆盖的部分的任意区域有一个 OFF 到 ON 的状态变化，即判定成功，产生的判定通过判定及判定区间部分计算。如有多个判定，取判定成功的判定中最早的一个。</p>
 </li>
 <li>
-<p>对于 Flick 类物件，如果在 Attack 及以内判定区间，对物件对触摸板覆盖的部分往外扩展一格的横向的任意<strong>两个区域（不需要相邻）</strong>，两区域依次有从 OFF 到 ON 的状态变化，即判定成功。产生的判定以两步状态变化的分界点（与 Attack Late 最大时间取最小值）为判定时间，通过判定及判定区间部分计算。如有多个判定，取判定成功的判定中最接近 0ms 的一个。</p>
+<p>对于 Flick 类物件，如果在 Attack 及以内判定区间，对物件对触摸板覆盖的部分往外扩展一格的横向的任意<strong>两个区域（不需要相邻）</strong>，两区域<strong>依次有</strong>从 OFF 到 ON 的状态变化，即判定成功。产生的判定以两步状态变化的分界点（与 Attack Late 最大时间取最小值）为判定时间，通过判定及判定区间部分计算。如有多个判定，取判定成功的判定中最接近 0ms 的一个。</p>
 <ul>
 <li>
 <p>如果 Flick 对触摸板覆盖的部分包含触摸板最边缘的区域，对此区域有从 OFF 到 ON 的状态变化时，视为触摸板外部有假设的一个区域在下一个时间粒度有从 OFF 到 ON 的变化。即，使用打 Tap 的方式打这种 Flick <strong>的靠近触摸板的边缘</strong>，判定时间以下一个时间粒度起始时间计算（即相当于 Tap）。</p>
