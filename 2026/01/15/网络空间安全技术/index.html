@@ -1,0 +1,1249 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Arctic_1010">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="网络空间安全技术 CH1 网络空间安全概述   信息安全基本目标：机密性， 完整性， 可用性 信息安全就是信息本身的机密性、完整性、可用性的保持。  机密性：防止未经授权使用信息 完整性：防止对信息的非法修改和破坏 可用性：确保及时可靠地使用信息    网络空间四要素：网络空间载体，网络操作对象，网络活动主体，网络活动形式。 网络空间的一般性定义：是一种人造的电磁空间，以互联网（空间载体）等为载体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络空间安全技术">
+<meta property="og:url" content="http://arctic1010.github.io/2026/01/15/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/">
+<meta property="og:site_name" content="Arctic_1010&#39;s temporary blog">
+<meta property="og:description" content="网络空间安全技术 CH1 网络空间安全概述   信息安全基本目标：机密性， 完整性， 可用性 信息安全就是信息本身的机密性、完整性、可用性的保持。  机密性：防止未经授权使用信息 完整性：防止对信息的非法修改和破坏 可用性：确保及时可靠地使用信息    网络空间四要素：网络空间载体，网络操作对象，网络活动主体，网络活动形式。 网络空间的一般性定义：是一种人造的电磁空间，以互联网（空间载体）等为载体">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20260114133655703.png">
+<meta property="og:image" content="http://arctic1010.github.io/img/assets/image-20260114154039546.png">
+<meta property="article:published_time" content="2026-01-14T17:08:29.000Z">
+<meta property="article:modified_time" content="2026-01-14T17:09:25.502Z">
+<meta property="article:author" content="Arctic_1010">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Review">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://arctic1010.github.io/img/assets/image-20260114133655703.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>网络空间安全技术 - Arctic_1010&#39;s temporary blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"arctic1010.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-7QPRQL6WWE"},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-7QPRQL6WWE", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-7QPRQL6WWE');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Arctic_1010&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="网络空间安全技术"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-01-15 01:08" pubdate>
+          2026年1月15日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          48 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">网络空间安全技术</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="网络空间安全技术">网络空间安全技术</h2>
+<h3 id="ch1-网络空间安全概述">CH1 网络空间安全概述</h3>
+<ol>
+<li>
+<p>信息安全基本目标：<strong>机密性， 完整性， 可用性</strong></p>
+<p>信息安全就是信息本身的机密性、完整性、可用性的保持。</p>
+<ul>
+<li>机密性：防止未经授权使用信息</li>
+<li>完整性：防止对信息的非法修改和破坏</li>
+<li>可用性：确保及时可靠地使用信息</li>
+</ul>
+</li>
+<li>
+<p>网络空间四要素：网络空间<strong>载体</strong>，网络操作<strong>对象</strong>，网络活动<strong>主体</strong>，网络活动<strong>形式</strong>。</p>
+<p>网络空间的一般性定义：是一种人造的电磁空间，以互联网（<strong>空间载体</strong>）等为载体，用户（<strong>活动主体</strong>）在其上对数据（<strong>操作对象</strong>）进行增删改查等操作，以实现信息通信活动（<strong>活动形式</strong>）。</p>
+</li>
+<li>
+<p>网络空间安全的四层次模型：设备层、系统层、数据层、应用层。</p>
+<p>以及，任何信息系统都会涉及到这四个层次！</p>
+<ul>
+<li>设备层安全：信息系统<strong>设备</strong>对应的安全问题：物理安全、环境安全等。</li>
+<li>系统层安全：信息系统<strong>自身</strong>对应的安全问题：网络安全、软件安全等。</li>
+<li>数据层安全：信息系统<strong>处理数据</strong>带来的问题：数据安全、身份安全等。</li>
+<li>应用层安全：信息系统<strong>应用</strong>过程形成的问题：内容安全、应用安全等。</li>
+</ul>
+<p>网络空间安全是关键信息基础设施保护的必要组成部分，对关键基础设施服务的充分保护有助于满足基础安全需求。四大基础构建模块包括信息安全、应用安全、网络安全、因特网安全。</p>
+<p>五种安全服务：<strong>鉴别服务、访问控制服务、数据机密性服务、数据完整性服务、抗抵赖服务。</strong></p>
+<p>八种安全机制：<strong>加密、数字签名、数据完整性、访问控制、鉴别交换、通信业务流填充、路由选择控制、公证</strong></p>
+</li>
+</ol>
+<h3 id="ch2-网络空间安全风险及风险管理">CH2 网络空间安全风险及风险管理</h3>
+<ol start="4">
+<li>
+<p>一句话：管理风险 = 了解风险 + 控制风险。</p>
+<p>信息安全风险管理是识别、控制、消除或最小化可能影响系统资源的不确定因素的过程。</p>
+</li>
+<li>
+<p>网络空间安全风险术语</p>
+<ul>
+<li><strong>资产</strong>是任何对组织有价值的东西，是要保护的对象。可以以多种形式存在。</li>
+<li><strong>威胁</strong>是对信息资产产生的负面影响。</li>
+<li><strong>脆弱性</strong>是与信息资产有关的弱点或安全隐患。</li>
+<li><strong>控制措施</strong>是根据安全需求部署的用来防范危险、降低风险的措施。</li>
+<li><strong>可能性</strong>是指威胁源利用脆弱性造成不良后果的可能性。</li>
+<li><strong>影响</strong>是指威胁源利用脆弱性造成不良后果的程度大小。</li>
+<li><strong>风险</strong>是指威胁源采取威胁方式，利用脆弱性造成的<strong>不良</strong>后果。</li>
+<li><strong>残余风险</strong>是指采取控制措施后，仍存在的风险。</li>
+<li><strong>风险评估</strong>是指从风险管理角度，分析系统存在的威胁，评估危害程度。</li>
+</ul>
+</li>
+<li>
+<p>常用的四类风险处置方法：<strong>减低、转移、规避、接受</strong>。</p>
+</li>
+<li>
+<p>风险分析：对所需要保护的资产及受到的潜在威胁的鉴别过程。风险是威胁和漏洞的组合。</p>
+<p>公式：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>R</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>F</mi><mo stretchy="false">(</mo><mi>I</mi><mi>a</mi><mo separator="true">,</mo><mi>V</mi><mi>a</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R_1(A,T,V)=R_2(L(T,V),F(Ia,Va))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">L</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mord mathdefault">a</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></p>
+<ul>
+<li>R 表示风险值（Risk）。</li>
+<li>A 表示资产（Asset），其延伸的 Ia 表示资产价值（Infrastructure）。</li>
+<li>T 表示威胁（Threat）。</li>
+<li>V 表示脆弱性（Vulnerability），Va 表示严重程度。</li>
+<li>L 表示安全事件可能性（Likelihood），F 表示损失（Financial loss）。</li>
+</ul>
+<img src="/img/assets/image-20260114133655703.png" srcset="/img/loading.gif" lazyload style="zoom: 80%;" />
+</li>
+<li>
+<p><strong>国产化替代</strong>替代的是被垄断的国外产品。</p>
+<ul>
+<li>国产桌面计算机技术体系对 Wintel 体系的替代（Windows + Intel）</li>
+<li>高端服务器和数据库对“IOE”的替代（IBM、ORACLE、EMC^2^）</li>
+</ul>
+</li>
+</ol>
+<h3 id="ch3-信息系统安全保障">CH3 <strong>信息系统安全保障</strong></h3>
+<ol start="9">
+<li>
+<p>信息系统安全保障是在信息系统的整个生命周期中，从技术、管理、工程和人员等方面提出安全保障要求，确保信息系统的保密性、完整性和可用性，降低安全风险到可接受的程度，从而保障系统实现组织机构的使命。</p>
+<p>简单来讲，在信息系统里确保三要素正常进行，降低安全风险到可接受的程度，保障服务在线。</p>
+<ul>
+<li>信息安全意识：认知可能存在的安全问题，明白安全事故对组织的危害，恪守正确的行为方式，清除在安全事故发生时所应采取的措施。</li>
+<li>被动攻击：攻击者只监听、收集、分析信息，<strong>不对系统资源或通信内容造成任何修改</strong>的攻击行为。</li>
+<li>主动攻击：攻击者对系统、数据或通信过程进行篡改、注入、伪造或破坏，<strong>直接影响系统行为或服务状态</strong>的攻击。</li>
+</ul>
+</li>
+<li>
+<p>网络空间安全模型是通过建模的思想，精确地、形式化地描述信息系统的安全特性，解释行为，从而解决安全管理问题。可以从模型中开发出关键的描述变量，构建一套安全性评估准则。</p>
+</li>
+<li>
+<p>PDRR 模型强调自动故障恢复能力：</p>
+<p>保护（<strong>P</strong>rotect）、检测（<strong>D</strong>etect）、反应（<strong>R</strong>eact）、恢复（<strong>R</strong>estore）。</p>
+<p>其中，如果 Pt &gt;= Dt + Rt，系统安全（保护时间大于等于检测时间加上反应和恢复时间）。</p>
+<p>如果 Pt &lt; Dt + Rt，系统暴露时间 Et 可算出。</p>
+</li>
+<li>
+<p>深度防御保障模型：</p>
+<p>信息保障技术框架（Information Assurance Technical Framework，IATF） 是由 NSA 制定的框架。为保护美国政府和工业界的信息与信息技术设施提供技术指南。代表理论为深度防御（Defense in depth）。</p>
+<ul>
+<li>强调人、技术、操作这三个核心要素。</li>
+<li>关注本地计算环境、区域边界、网络基础设施、支撑基础设施。</li>
+<li>在此基础上，对信息系统进行多层防护。</li>
+</ul>
+<p>一句话：信息系统安全不能只依赖单一技术。在设备、系统、应用、数据多层中都部署不同的防御体系，结合对三要素的多种安全机制，即使某几层的体系被攻破，也可以保护系统整体安全。</p>
+</li>
+<li>
+<p>DDoS 事件：SYN Flood、UDP Flood、ICMP Flood</p>
+</li>
+<li>
+<p>常见应急事件：勒索病毒、挖矿木马、远控木马、普通木马</p>
+</li>
+</ol>
+<h3 id="ch4-网络空间安全技术体系与技术">CH4 网络空间安全技术体系与技术</h3>
+<ol start="15">
+<li>
+<p>信息系统安全体系框架：</p>
+<p>信息系统安全的总需求是<strong>物理安全、网络安全、信息内容安全、应用系统安全和安全管理</strong>的总和，安全的最终目标是确保信息的<strong>机密性、完整性、可用性、可控性和抗抵赖性</strong>，以及信息系统主体对信息资源的控制。</p>
+<p>完整的信息系统安全体系框架由<strong>技术</strong>体系、<strong>组织机构</strong>体系和<strong>管理</strong>体系共同构建。</p>
+<p>管理体系：法律管理、制度管理和培训管理。</p>
+</li>
+<li>
+<p>数据完整性：数据完整性是防止非法实体对交换数据的修改、插入、替换和删除，或者如果被修改、插入、替换和删除时可以被检测出来。数据完整性可以通过消息认证模式来保证。</p>
+<p>完整性机制可以通过密码学、上下文、探测和确认、阻止提供。</p>
+</li>
+<li>
+<p>数字签名的特性：不可伪造性、抗抵赖性、保证消息完整性</p>
+</li>
+<li>
+<p>公钥加密模型：RSA、ECC</p>
+</li>
+<li>
+<p>在网络通信中，可以针对消息内容进行攻击。消息认证做的事情是，对收到的消息进行验证，证明确实是来自声称的发送方，并且没有被修改过。如果在消息中加入时间及顺序信息，则可以完成对时间和顺序的鉴别。</p>
+<ul>
+<li>信息加密：用整个消息的密文作为鉴别标识。但是接收方必须识别错误。</li>
+<li>哈希函数：公开函数，任意长度消息映射到固定长度散列值。</li>
+</ul>
+</li>
+<li>
+<p>增加信息验证码（相同的函数）对数据完整性进行验证。</p>
+</li>
+<li>
+<p>公证机制：由第三方公正机构提供，接收通信实体的委托，掌握可供证明的可信赖的信息。可以是仲裁方式或判决方式。</p>
+</li>
+</ol>
+<h3 id="ch5-鉴别机制与技术">CH5 鉴别机制与技术</h3>
+<ol start="22">
+<li>
+<p>实体鉴别的定义：通过在<strong>某一层</strong>提供<strong>鉴别服务</strong>，使其上层实体确信当前通信的对等实体确实是其<strong>期望</strong>的合法实体，从而防止伪装和冒充攻击。</p>
+<p>对身份鉴别系统的要求</p>
+<ul>
+<li>验证者正确识别合法申请者的概率最大化，攻击者伪装申请者让验证者识别成功的概率最小化（可以忽略）。</li>
+<li>不具有可传递性，有可证明的安全性，通信有效性。</li>
+<li>交互识别，第三方实时参与并可信赖</li>
+</ul>
+</li>
+<li>
+<p>实现身份鉴别的途径：基于你所知道的、你所拥有的、个人特征</p>
+<ul>
+<li>What you know. What you have. What you are.</li>
+</ul>
+</li>
+<li>
+<p>基于质询—应答的身份鉴别：由验证者给声称者发送一个确定的值（质询消息），该值参与鉴别信息的运算。产生的非重复质询消息完全由验证者决定，使得每次传输的鉴别信息不同。</p>
+<p>步骤：</p>
+<ol start="0">
+<li>
+<p><code>A, B shares a key = K</code></p>
+</li>
+<li>
+<p><code>A -&gt; B : ID_A</code></p>
+</li>
+<li>
+<p><code>B -&gt; A : Challenge = n</code></p>
+</li>
+<li>
+<p><code>A -&gt; B : calculate H(F(ID_A, K), n), send T = H(F(ID_A, K), n)</code></p>
+</li>
+<li>
+<p><code>B compares H(F(ID_A, K), n) == T, True or False</code></p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="ch6-访问控制机制与技术">CH6 访问控制机制与技术</h3>
+<ol start="25">
+<li>
+<p>访问控制的概念和目标：针对越权使用资源的防御措施。防止对任何资源（如计算资源、通信资源或信息资源）进行未授权的访问，从而使资源在授权范围内使用，决定用户能做什么，也决定代表一定用户利益的程序能做什么。</p>
+</li>
+<li>
+<p>访问控制模型分类：</p>
+<ul>
+<li>
+<p>主体：发起访问的实体。客体：被访问的资源。</p>
+</li>
+<li>
+<p>自主访问控制（DAC）允许客体属主决定主体对该客体的访问权限。可用于商业系统，可灵活调整策略，但是安全性不高。是一种分布式授权管理策略。</p>
+</li>
+<li>
+<p>强制访问控制（MAC）主体对客体的所有访问请求按照（设定好的）强制访问控制策略进行控制。属主无权决定访问权限。将主体和客体分级，根据主体和客体的级别标记来决定访问模式。</p>
+<ul>
+<li>
+<p>四种强制访问控制的策略：上读、上写、下读、下写。</p>
+</li>
+<li>
+<p>以经典 <strong>BLP 模型</strong> 为例（此时级别由保密性决定）：</p>
+<ul>
+<li><strong>不上读（No Read Up）</strong>：主体不能读取高于自己安全级别的客体</li>
+<li><strong>不下写（No Write Down）</strong>：主体不能向低于自己安全级别的客体写入信息</li>
+</ul>
+<p>但是可以进行上写下读。主要是<strong>防止高密级信息向低密级泄露</strong>。</p>
+</li>
+<li>
+<p><strong>Biba 模型</strong>保证完整性（级别由完整性决定）</p>
+<ul>
+<li><strong>不上写（No Write Up）</strong>：低完整性主体<strong>不能向</strong>高完整性客体写数据，防止不可信数据“污染”高完整性对象。</li>
+<li><strong>不下读（No Read Down）</strong>：高完整性主体 <strong>不能读取</strong> 低完整性客体，防止高完整性主体受到低可信信息影响。</li>
+</ul>
+<p>但是可以进行上读下写。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>基于角色的访问控制（RBAC）是一种通过<strong>角色</strong>来管理用户权限的访问控制模型，用户不直接被授予权限，而是通过被分配的角色间接获得权限。</p>
+<ul>
+<li>将“用户—权限”的直接关系，转化为“用户—角色—权限”的间接关系。</li>
+<li>支持最小权限原则，权限管理清晰集中，易于维护和审计。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="ch7-防火墙技术及其发展">CH7 防火墙技术及其发展</h3>
+<ol start="27">
+<li>
+<p>防火墙是在网络间提供安全连接的设备，用于实现和执行网络间通信的安全策略。</p>
+</li>
+<li>
+<p>防火墙的种类：</p>
+<ul>
+<li>包过滤防火墙：工作在网络层，仅根据数据头的 IP 地址等判断是否通过。
+<ul>
+<li>优点：处理速度快，易于配置，对用户透明</li>
+<li>缺点：不能识别应用层协议，不能防止 IP spoof，静态策略成为漏洞</li>
+</ul>
+</li>
+<li>应用代理防火墙：工作在应用层，编写不同的代理程序，实现对应用层数据的分析。
+<ul>
+<li>优点：可以检查协议特征，对数据包的检测能力很强</li>
+<li>缺点：支持的应用数量有限，对用户不透明，性能低</li>
+</ul>
+</li>
+<li>状态监测防火墙：工作在 L2 ~ L4 层，在包过滤的基础上通过规则表和状态表综合分析。
+<ul>
+<li>特点：性能高，支持大量应用，在内核级实现检测过滤，通过存储连接状态支持应用层协议检查。</li>
+</ul>
+</li>
+<li>完全内容检测防火墙：工作在 L2 ~ L7 层，状态监测防火墙 + 应用代理防火墙。</li>
+</ul>
+</li>
+<li>
+<p>路由器配置：NAT（地址转换）、MAP（端口映射）、IP 与 MAC 绑定。</p>
+</li>
+<li>
+<p>防火墙的工作接入方式：路由接入（作为路由器），透明接入（作为交换机），混合接入（同时作为路由器和交换机）。</p>
+<ul>
+<li>
+<p>路由接入：防火墙作为三层设备（具备路由功能），流量必须经过防火墙，需要重新规划 IP 地址和路由。</p>
+<ul>
+<li>优点：网络结构清晰，易于与 NAT、VPN 等结合。</li>
+<li>缺点：需改动网络结构，对原有配置影响大，切换风险较高。</li>
+</ul>
+</li>
+<li>
+<p>透明接入：防火墙作为二层设备，对网络透明，不改变路由结构。</p>
+<ul>
+<li>优点：部署简单，适合快速上线</li>
+<li>缺点：不具备路由功能，可扩展性差，不支持 NAT 等。</li>
+</ul>
+</li>
+<li>
+<p>混合接入：防火墙同时支持三层和二层工作模式，灵活适配复杂网络环境。</p>
+<ul>
+<li>优点：兼具安全性和部署灵活性</li>
+<li>缺点：配置复杂，结构复杂，运维难度高。</li>
+</ul>
+</li>
+<li>
+<p>企业防火墙的典型部署：DMZ（Demilitarized Zone）隔离区。</p>
+<img src="/img/assets/image-20260114154039546.png" srcset="/img/loading.gif" lazyload style="zoom: 80%;" />
+</li>
+</ul>
+</li>
+<li>
+<p>衡量防火墙性能的五大指标：吞吐量、时延、丢包率、背靠背、并发连接数。</p>
+<ul>
+<li>吞吐量：防火墙一秒能收到并转发多少数据。</li>
+<li>时延：数据包通过防火墙需要增加多少处理时间。</li>
+<li>丢包率：工作过程中未能成功转发的数据包比例。</li>
+<li>背靠背：防火墙在不发生丢包的情况下，能够连续处理的最大数据包数量。</li>
+<li>并发连接数：防火墙同时能够维护的最大会话数量。</li>
+</ul>
+</li>
+</ol>
+<h3 id="ch8-入侵检测">CH8 入侵检测</h3>
+<ol start="32">
+<li>
+<p>入侵（Intrusion）是指在非法或未经授权的情况下，试图存取或处理系统或网络中的信息，或破坏系统或网络正常运行，致使系统或网络的机密性、完整性和可用性受到破坏的故意行为。</p>
+</li>
+<li>
+<p>入侵检测模型（IDM）：</p>
+<ul>
+<li>通用入侵检测模型（Denning 模型）
+<ul>
+<li>通过对系统和网络行为进行统计分析，发现偏离正常行为模式的异常，从而检测入侵行为。</li>
+</ul>
+</li>
+<li>层次化入侵检测模型（IDM）
+<ul>
+<li>将 IDS 系统按功能和层次分为多个级别。结构清晰可扩展但是系统复杂，需考虑层间通信成本。</li>
+</ul>
+</li>
+<li>管理式入侵检测模型（SNMP-IDSM）
+<ul>
+<li>将入侵检测系统纳入网络管理体系，适合大型网络运维。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>入侵检测系统：CIDF 架构：入侵检测系统的通用模型框架</p>
+<ul>
+<li>是一种用于规范入侵检测系统（IDS）组成、接口和协作方式的体系结构模型，目的是使不同厂商、不同类型的 IDS 组件能够协同工作和互操作。</li>
+<li>特点：模块化、可扩展、互操作性强。</li>
+<li>核心组件：事件生成器（采集原始数据），事件分析器（识别入侵行为），事件数据库（存储事件），响应单元（执行防御）。</li>
+</ul>
+</li>
+<li>
+<p>入侵监测系统（Intrusion Detection System，IDS）分析技术：异常检测、特征检测。</p>
+<ul>
+<li>异常检测：基于行为的检测，标识出不符合正常模式的活动，实现难度较大，因为难以明确划分正常模式和异常模式。</li>
+<li>特征检测：也称为误用检测，建立入侵行为模型（攻击特征库），判断当前行为是否符合已知的攻击模式。现已被广泛使用。
+<ul>
+<li>使用的检测方法：基于专家系统、简单规则的模式匹配、攻击签名分析、统计模式匹配、状态转换分析等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>IDS 的两个指标：漏报率、误报率。</p>
+<p>IDS 的缺点：IDS 是旁路部署，事后发现危险，实时性不强。无法分析加密数据。只能检测已知攻击（0 Day 等不好使）。带宽要求高。攻击响应依赖人工。</p>
+</li>
+</ol>
+<h3 id="ch9-其他网络安全技术及设备">CH9 其他网络安全技术及设备</h3>
+<ol start="37">
+<li>
+<p>安全隔离与信息交换系统（网闸）</p>
+<ul>
+<li>
+<p>应对网络安全漏洞传统解决方案为：物理隔离。</p>
+<ul>
+<li>
+<p>不连接，没有连接，就能防止一切直接网络攻击。</p>
+</li>
+<li>
+<p>人工拷盘可以解决信息传输问题。</p>
+</li>
+<li>
+<p>缺点：延时长速度慢，可靠性低，人工操作风险性大。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>网闸是什么？网闸是在两个不同安全域（隔离程度高的网络）之间，通过协议转换的手段，以信息摆渡的方式实现安全的数据交换，且只有被系统明确要求传输的信息才可以通过。</p>
+</li>
+<li>
+<p>产品定位：安全隔离网闸的思路是在保证必须安全的前提下，尽可能互联互通。与防火墙不同。防火墙的思路是在保障互联互通的前提下，尽可能安全。</p>
+</li>
+<li>
+<p>优势：在不可信网络牺牲自己来有效应对攻击，充分保护可信网络。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>网络准入控制（NAC）</p>
+<ul>
+<li>控制终端设备是否、以及以何种权限接入网络的安全机制。</li>
+<li>核心功能：身份鉴别，终端安全状态评估，准入策略控制，隔离与整改，更新与修复。</li>
+<li>NAC 用户流程：用户尝试访问一个网页或客户端，用户输入用户名和密码，服务器执行设备和网络扫描，评估安全漏洞。如果设备不符合安全策略或登录信息不正确，拒绝用户接入；如果设备是清洁的，接入网络。</li>
+</ul>
+</li>
+<li>
+<p>入侵防御系统（IPS）</p>
+<ul>
+<li>IPS 是一种集入侵检测和防御于一体的安全产品，它不但能检测入侵的发生，而且能通过一定的响应方式，实时地中止入侵行为的发生和发展，实时地保护信息系统不受实质性的攻击。</li>
+<li>IPS 就是防火墙 + 入侵检测系统。</li>
+<li>功能：识别并阻断攻击，向管理控制台发送日志信息，集成防火墙的过滤功能。</li>
+</ul>
+</li>
+<li>
+<p>IDS 和 IPS 的区别：</p>
+<p>IDS 被动检测，旁路部署，通过镜像获取数据，不阻断流量，对网络几乎没有影响，实时性较弱，无漏报。</p>
+<p>IPS 主动检测，串联部署，可能影响性能，阻断流量，无误报，实时性较强。</p>
+</li>
+</ol>
+<h3 id="ch10-虚拟专用网技术">CH10 虚拟专用网技术</h3>
+<ol start="41">
+<li>
+<p>VPN 是一种在公共网络上通过隧道、加密和认证技术构建安全通信通道的技术。</p>
+<ul>
+<li>主要协议：IPSec、SSL/TLS</li>
+<li>IPSec：工作在网络层（IP 层），对应用透明，安全性高。
+<ul>
+<li>IP 鉴别头 AH 机制：通过将 IP 数据包插入一个 AH 头来提供安全服务。AH 能为 IP 数据包提供<strong>完整性验证和身份认证</strong>。
+<ul>
+<li>AH 传输模式：【原 IP 头】【AH 头】【TCP/UDP 头】【数据】</li>
+<li>AH 隧道模式：【新 IP 头（协议字段为 51）】【AH 头】【原 IP 头】【TCP/UDP 头】【数据】</li>
+</ul>
+</li>
+<li>IP 封装安全载荷 ESP：ESP 将整个 IP 头或上层协议（传输层协议）部分封装到一个 ESP 载荷之中，然后做<strong>加密</strong>处理，只鉴别 ESP 头以后的信息，比 AH 鉴别的范围窄。
+<ul>
+<li>ESP 传输模式：【原 IP 头】【ESP 头】〖【TCP/UDP 头】【数据】〗【ESP 尾】</li>
+<li>ESP 隧道模式：【新 IP 头（协议字段为 50）】【ESP 头】〖【原 IP 头】【TCP/UDP 头】【数据】〗【ESP 尾】</li>
+</ul>
+</li>
+<li>为什么叫隧道模式？可以看到，原来的包被 AH 或 ESP 完全保护，像隧道一样，而单从外面的结构是看不出来的。隧道模式可以防止内网 IP 地址暴露，支持子网互联。</li>
+<li>IPSec 采用 IKE 完成 SA 的协商。</li>
+</ul>
+</li>
+<li>SSL：Secure Socket Layer 安全套接层，工作在应用层。
+<ul>
+<li>提供的服务：认证用户和服务器，加密数据，维护数据的完整性。</li>
+<li>技术栈：SSL 握手协议/HTTP、SSL 记录协议、TCP、IP、…</li>
+<li>SSL 握手协议：建立安全连接，服务器和客户机相互验证和密钥交换。</li>
+<li>SSL 记录协议：为 SSL 提供了机密性和消息完整性。
+<ul>
+<li>应用实例：HTTPS 结合 HTTP 和 SSL 来实现 Web 服务器和浏览器的安全通信，单向鉴别。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TLS：Transport Layer Security 传输层安全，</li>
+</ul>
+</li>
+<li>
+<p>VPN 通道的建立方式：</p>
+<ul>
+<li>
+<p>Host to Host 模式：要求两边主机都要支持 IPSec，VPN 网关可以支持可以不支持 IPSec。</p>
+<ul>
+<li>
+<p><code>Host A  ===== 加密隧道 =====  Host B</code></p>
+</li>
+<li>
+<p>适用于两台主机点对点通信，内部系统之间的安全连接。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Host to VPN 模式：Host 必须支持 IPSec，VPN 网关必须支持 IPSec。</p>
+<ul>
+<li><code>Host A  ===== 加密隧道 =====  VPN Gateway  ── 内网</code></li>
+<li>适用于单台主机访问某个内部网络。</li>
+</ul>
+</li>
+<li>
+<p>VPN to VPN 模式：主机可以不支持 IPSec，VPN 网关必须支持 IPSec。</p>
+<ul>
+<li><code>LAN A ── VPN Gateway A ===== 隧道 ===== VPN Gateway B ── LAN B</code></li>
+<li>使用 IPSec 隧道模式，封装整个 IP 包，隐藏内部网络结构。适用于站点到站点的 VPN。</li>
+</ul>
+</li>
+<li>
+<p>Remote User to VPN 模式：用户通过公网远程接入内网。VPN 网关必须支持 IPSec。</p>
+<ul>
+<li><code>Remote User(Laptop) === 隧道 === VPN Gateway —— 内网</code></li>
+<li>适用于远程用户访问内网的场景，需要严格身份认证。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="ch11-系统安全">CH11 系统安全</h3>
+<ol start="43">
+<li>系统安全的定义：采取各种措施和实践，以保护计算机系统及其相关资源不受未经授权的访问、使用、披露、破坏、修改或者中断。</li>
+<li>系统安全的核心目标：确保信息的机密性、完整性、可用性，防止恶意攻击和意外事故损害系统。
+<ul>
+<li>操作系统安全：内存隔离、堆栈保护、数据执行保护，文件系统权限</li>
+<li>数据库安全：SQL 注入，XSS，配置错误</li>
+</ul>
+</li>
+<li>备份：全备份、增量备份、差异备份</li>
+<li>漏洞分析：静态、动态分析，模糊测试</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/SCU/" class="category-chain-item">SCU</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Study/" class="print-no-link">#Study</a>
+      
+        <a href="/tags/Review/" class="print-no-link">#Review</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>网络空间安全技术</div>
+      <div>http://arctic1010.github.io/2026/01/15/网络空间安全技术/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Arctic_1010</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年1月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/01/09/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0/" title="网络攻防技术-课程部分复习">
+                        <span class="hidden-mobile">网络攻防技术-课程部分复习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Arctic1010/Arctic1010.github.io","repo-id":"R_kgDOKVUQPQ","category":"Announcements","category-id":"DIC_kwDOKVUQPc4CsWM3","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
